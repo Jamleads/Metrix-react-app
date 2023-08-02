@@ -1,3 +1,4 @@
+import React from "react";
 import Dashboard from "./Components/Dashboard";
 import Conversations from "./Components/Conversations";
 import Sidebar from "./Components/Sidebar";
@@ -17,6 +18,7 @@ function App() {
       </Route>
     )
   );
+
   return (
     <div>
       <RouterProvider router={router} />

@@ -13,15 +13,16 @@ import rightIcon from "../assets/chevron-down.svg";
 import logoutIcon from "../assets/Logout.svg";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
+  const location = useLocation();
   return (
     <div className="bg-[#F4F5FA] flex w-full h-screen">
       <div
         className={`sidebar flex flex-col ${
-          open ? "w-[20%]" : "w-[5%]"
+          open ? "w-[20%]" : "w-[10%]"
         } w-[20%] bg-[#ffffff] h-screen py-5 shadow-xl relative`}
       >
         <div className="pb-5 pr-5 pl-10">
@@ -50,29 +51,35 @@ const Sidebar = () => {
             open ? "px-10" : "px-5"
           }  mt-10 flex flex-col gap-2`}
         >
-          <MenuLink avata={dashboard} title="Dashboard" style="active" to="/" />
-          <MenuLink avata={orders} title="Orders" />
-          <MenuLink avata={userIcon} title="Customer" />
-          <MenuLink avata={folderIcon} title="Inventry" />
+          <MenuLink
+            avata={dashboard}
+            title={!open ? "" : "Dashboard"}
+            style={location.pathname === "/" ? "active" : ""}
+            to="/"
+          />
+          <MenuLink avata={orders} title={!open ? "" : "Orders"} />
+          <MenuLink avata={userIcon} title={!open ? "" : "Customer"} />
+          <MenuLink avata={folderIcon} title={!open ? "" : "Inventry"} />
           <MenuLink
             avata={chatIcon}
-            title="Conversations"
+            title={!open ? "" : "Conversations"}
+            style={location.pathname === "/conversations" ? "active" : ""}
             to="/conversations"
           />
-          <MenuLink avata={settingsIcon} title="Settings" />
+          <MenuLink avata={settingsIcon} title={!open ? "" : "Settings"} />
         </div>
 
         <div className="sidebar-footer mt-auto px-10">
           <MenuLink
             avata={headphoneIcon}
-            title="Contact Support"
+            title={!open ? "" : "Contact Support"}
             style="sidebar-footer-support"
           />
 
           <div className="bg-secondary mt-5 rounded-lg">
             <MenuLink
               avata={giftIcon}
-              title="Free Gift Awaits You!"
+              title={!open ? "" : "Free Gift Awaits You!"}
               style="sidebar-footer-gift"
             />
 
@@ -99,7 +106,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <main className={`${open ? "w-[80%]" : "w-[95%]"}  h-screen`}>
+      <main className={`${open ? "w-[80%]" : "w-[90%]"}  h-screen`}>
         <Outlet />
       </main>
     </div>
