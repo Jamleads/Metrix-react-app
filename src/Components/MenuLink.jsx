@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MenuLink = ({ href, avata, title, style }) => {
+const MenuLink = ({ to, avata, title, style }) => {
   return (
-    <a href={href ? href : "#"}>
+    <a href={to ? to : "#"}>
       <div
         className={`menu-link flex items-center py-3 px-6 rounded-lg ${style}`}
       >
@@ -10,7 +11,7 @@ const MenuLink = ({ href, avata, title, style }) => {
           <img src={avata} alt="" className="sidebar-avata w-[30px]" />
         </div>
         <div className="">
-          <h2 className="text-lg ml-5 font-light">{title}</h2>
+          {/* <h2 className="text-lg ml-5 font-light">{title}</h2> */}
         </div>
       </div>
     </a>

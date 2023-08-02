@@ -11,14 +11,14 @@ import { useState } from "react";
 import { SalesData } from "./Dummy";
 import BarChat from "./BarChat";
 
-const MainContainer = () => {
+const Dashboard = () => {
   const [salesData] = useState({
     labels: SalesData.map((data) => data.day),
     datasets: [
       {
         label: "Sales",
         data: SalesData.map((data) => data.sales),
-        barPercentage: 0.3,
+        barPercentage: 0.2,
         backgroundColor: "#5570F1",
         base: 0,
         borderRadius: 50,
@@ -27,10 +27,10 @@ const MainContainer = () => {
   });
 
   return (
-    <div className="w-[80%] h-screen">
-      <NavBar />
+    <div className="w-full h-full">
+      <NavBar pageTitle="Dashboard" />
       <div className="w-full px-5 pt-5">
-        <section className="section1h-[14vh] flex items-center justify-between">
+        <section className="section1 h-[14vh] flex items-center justify-between">
           <BoardData
             iconBg="blue"
             icon={graph}
@@ -57,7 +57,7 @@ const MainContainer = () => {
           <BoardOderData />
         </section>
 
-        <section className="mt-5 w-full h-[68vh] flex justify-between">
+        <section className="mt-5 w-full h-[70vh] flex justify-between">
           <div className="w-[63%] h-full flex flex-col gap-5">
             <div className="h-1/2 flex gap-8">
               <div className="w-1/2 h-full bg-yellow-400">
@@ -66,6 +66,7 @@ const MainContainer = () => {
                 incidunt nisi obcaecati quasi ipsum optio, magnam sint ea
                 nostrum, aliquid vitae accusantium.
               </div>
+
               <div className="w-1/2 h-full flex flex-col items-center justify-between gap-5">
                 <BoardData
                   iconBg="bg-[#ffffff29]"
@@ -116,4 +117,4 @@ const MainContainer = () => {
   );
 };
 
-export default MainContainer;
+export default Dashboard;

@@ -3,12 +3,12 @@ import notification from "../assets/Notification.svg";
 import profile from "../assets/profile.svg";
 import homeIcon from "../assets/Home.svg";
 
-const NavBar = () => {
+const NavBar = ({ pageTitle }) => {
   return (
     <div className="nav-bar bg-mainWhite w-full">
       <div className="flex items-center justify-between px-5 py-4">
         <div>
-          <h3 className="text-lg">Dashboard</h3>
+          <h3 className="text-lg">{pageTitle}</h3>
         </div>
 
         <div className="flex items-center">
@@ -34,8 +34,9 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="px-5 py-2 border-t-[1px]">
+      <div className="px-5 py-1 border-t-[1px] flex items-center">
         <img src={homeIcon} alt="" />
+        <p className="ml-2">/ {pageTitle}</p>
       </div>
     </div>
   );
