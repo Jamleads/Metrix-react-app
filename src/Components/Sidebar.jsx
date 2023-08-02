@@ -22,7 +22,7 @@ const Sidebar = () => {
     <div className="bg-[#F4F5FA] flex w-full h-screen">
       <div
         className={`sidebar flex flex-col ${
-          open ? "w-[20%]" : "w-[10%]"
+          !open ? "w-[8%]" : "w-[20%]"
         } w-[20%] bg-[#ffffff] h-screen py-5 shadow-xl relative`}
       >
         <div className="pb-5 pr-5 pl-10">
