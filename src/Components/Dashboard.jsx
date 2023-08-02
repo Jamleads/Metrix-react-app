@@ -9,10 +9,12 @@ import users from "../assets/User.svg";
 import folder2 from "../assets/Folder2.svg";
 import { useState } from "react";
 import { SalesData } from "./Dummy";
-import BarChat from "./BarChat";
+import BarChart from "./BarChart";
+import DoughnutChart from "./DoughnutChart";
+import { data } from "autoprefixer";
 
 const Dashboard = () => {
-  const [salesData] = useState({
+  const [salesData, setSalesData] = useState({
     labels: SalesData.map((data) => data.day),
     datasets: [
       {
@@ -22,9 +24,48 @@ const Dashboard = () => {
         backgroundColor: "#5570F1",
         base: 0,
         borderRadius: 50,
+        // options: {
+        //   maintainAspectRario: false,
+        // },
       },
     ],
   });
+
+  const bar0ptions = {
+    responsive: true,
+    maintainAspectRario: false,
+    scales: {
+      x: {
+        grid: {
+          drawOnChartArea: false,
+        },
+      },
+      y: {
+        grid: {
+          drawOnChartArea: false,
+        },
+        min: 0,
+        max: 100,
+        ticks: {
+          stepSize: 20,
+        },
+      },
+    },
+  };
+
+  const data = {
+    labels: ["Acquisition", "Purchase", "Retention"],
+    datasets: [
+      {
+        label: "Poll",
+        data: [60, 25, 15],
+        backgroundColor: ["#5570F1", "#FFCC91", "#97A5EB"],
+      },
+    ],
+  };
+  const option = {
+    responsive: true,
+  };
 
   return (
     <div className="w-full h-full">
@@ -60,11 +101,21 @@ const Dashboard = () => {
         <section className="mt-5 w-full h-[70vh] flex justify-between">
           <div className="w-[63%] h-full flex flex-col gap-5">
             <div className="h-1/2 flex gap-8">
-              <div className="w-1/2 h-full bg-yellow-400">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam
-                aperiam earum harum, numquam omnis perferendis autem molestiae
-                incidunt nisi obcaecati quasi ipsum optio, magnam sint ea
-                nostrum, aliquid vitae accusantium.
+              <div className="w-1/2 h-full bg-mainWhite p-5 rounded-xl">
+                <div className="flex items-center justify-between h-[10%]">
+                  <p>Marketing</p>
+
+                  <select name="" id="" className="border-0">
+                    <option value="Sales">Last 7 days</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select>
+                </div>
+
+                <div className=" w-full h-[90%] relative">
+                  <DoughnutChart data={data} option={option} />
+                </div>
               </div>
 
               <div className="w-1/2 h-full flex flex-col items-center justify-between gap-5">
@@ -92,10 +143,33 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="h-1/2 overflow-scroll bg-mainWhite">
-              {/* <div className="w-full "> */}
-              <BarChat chartData={salesData} />
-              {/* </div> */}
+            <div className="h-1/2 bg-mainWhite p-5 rounded-xl">
+              <div className="flex items-center justify-between h-[10%]">
+                <div className="flex items-center">
+                  <p>Summary</p>
+                  <select
+                    name=""
+                    id=""
+                    className="ml-5 px-5 bg-[#5570f114] text-actionBlue border-0"
+                  >
+                    <option value="Sales">Sales</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                  </select>
+                </div>
+
+                <select name="" id="" className="border-0">
+                  <option value="Sales">Last 7 days</option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
+              </div>
+
+              <div className=" h-[90%] relative">
+                <BarChart chartData={salesData} options={bar0ptions} />
+              </div>
             </div>
           </div>
 

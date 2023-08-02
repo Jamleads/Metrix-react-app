@@ -11,7 +11,7 @@ const MenuLink = ({ to, avata, title, style }) => {
           <img src={avata} alt="" className="sidebar-avata w-[30px]" />
         </div>
         <div className="">
-          {/* <h2 className="text-lg ml-5 font-light">{title}</h2> */}
+          <h2 className="text-lg ml-5 font-light">{title}</h2>
         </div>
       </div>
     </a>

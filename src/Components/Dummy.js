@@ -200,6 +200,8 @@ export const SalesData = [
   },
 ];
 
+export const MarketingData = [];
+
 export const ContactCards = [
   {
     id: 1,
