@@ -49,21 +49,21 @@ const Conversations = () => {
                 </div>
               </div>
 
-              <div className="message-body w-[40%] mt-3">
+              <div className="message-body lg:w-[40%] w-[80%] mt-3">
                 <div className="bg-actionBlue text-mainWhite p-5 rounded-t-2xl rounded-r-2xl">
                   Hello, I want to make enquiries about your product
                 </div>
                 <p className="text-sm text-textGray">12:55am</p>
               </div>
 
-              <div className="message-body w-[40%] ml-auto mt-3">
+              <div className="message-body lg:w-[40%] w-[80%] ml-auto mt-3">
                 <div className="bg-secondary  p-5 rounded-t-2xl rounded-l-2xl">
                   Hello Janet, thank you for reaching out
                 </div>
                 <p className="text-sm text-textGray text-end">12:55am</p>
               </div>
 
-              <div className="message-body w-[35%] ml-auto mt-3">
+              <div className="message-body lg:w-[35%] w-[70%] ml-auto mt-3">
                 <div className="bg-secondary  p-5 rounded-t-2xl rounded-l-2xl">
                   What do you need to know?
                 </div>
@@ -76,7 +76,7 @@ const Conversations = () => {
                 </p>
               </div>
 
-              <div className="message-body w-[45%] mt-3">
+              <div className="message-body lg:w-[45%] w-[80%] mt-3">
                 <div className="bg-actionBlue text-mainWhite p-5 rounded-t-2xl rounded-r-2xl">
                   I want to know if the price is negotiable, i need about 2
                   Units
