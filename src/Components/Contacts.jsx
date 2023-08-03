@@ -5,7 +5,7 @@ import { ContactCards } from "./Dummy";
 
 const Contacts = () => {
   return (
-    <div className="w-1/3 h-full bg-mainWhite rounded-xl">
+    <div className="lg:w-1/3 w-full h-full bg-mainWhite rounded-xl">
       <div className="p-5 h-[20%]">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold">Contacts</h2>

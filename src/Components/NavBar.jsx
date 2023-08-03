@@ -25,7 +25,7 @@ const NavBar = ({ pageTitle }) => {
             </select>
           </div>
 
-          <div className="nav-bar-notification mx-5">
+          <div className="nav-bar-notification lg:mx-5 mx-2">
             <img src={notification} alt="" className="w-[25px]" />
           </div>
 
