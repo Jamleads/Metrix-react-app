@@ -19,7 +19,7 @@ const Sidebar = () => {
   const [open, setOpen] = useState(true);
   const location = useLocation();
   return (
-    <div className="bg-[#F4F5FA] flex w-full h-screen">
+    <div className="bg-[#F4F5FA] flex w-full lg:h-screen h-[150rem]">
       <div
         className={`sidebar flex flex-col ${
           open ? "lg:w-[20%] w-[75%]" : "lg:w-[8%] w-[5%]"
@@ -169,7 +169,7 @@ const Sidebar = () => {
       <main
         className={`${
           open ? "lg:w-[80%] w-full" : "lg:w-[92%] w-full"
-        }  h-screen`}
+        }  lg:h-screen`}
       >
         <Outlet />
       </main>

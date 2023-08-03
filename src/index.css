@@ -62,3 +62,12 @@ button:focus-visible {
 input:focus {
   outline: none;
 }
+
+@media (max-width: 1000px) {
+  .sidebar {
+    position: absolute;
+  }
+  .section2 {
+    margin-top: 21rem;
+  }
+}

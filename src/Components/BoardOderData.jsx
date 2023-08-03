@@ -3,7 +3,7 @@ import bag from "../assets/Bag.svg";
 
 const BoardOderData = () => {
   return (
-    <div className="board-oder-data bg-mainWhite p-3 rounded-2xl w-[35%]">
+    <div className="board-oder-data bg-mainWhite p-3 rounded-2xl lg:w-[35%] w-full">
       <div className="flex items-center justify-between">
         <div className="icon-cont bg-secondary flex items-center justify-center w-[40px] h-[40px] rounded-lg">
           <img src={bag} alt="" />

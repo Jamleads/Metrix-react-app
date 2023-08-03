@@ -24,9 +24,6 @@ const Dashboard = () => {
         backgroundColor: "#5570F1",
         base: 0,
         borderRadius: 50,
-        // options: {
-        //   maintainAspectRario: false,
-        // },
       },
     ],
   });
@@ -70,8 +67,9 @@ const Dashboard = () => {
   return (
     <div className="w-full h-full">
       <NavBar pageTitle="Dashboard" />
+
       <div className="w-full px-5 pt-5">
-        <section className="section1 h-[14vh] flex items-center justify-between">
+        <section className="section1 h-[14vh] lg:flex items-center justify-between">
           <BoardData
             iconBg="blue"
             icon={graph}
@@ -80,7 +78,7 @@ const Dashboard = () => {
             rightTitle="Volume"
             rightData="450"
             rightDataSpan="+20.00%"
-            boardStyle="w-[30%]"
+            boardStyle="lg:w-[30%] w-full"
           />
 
           <BoardData
@@ -92,16 +90,16 @@ const Dashboard = () => {
             rightTitle="Active"
             rightData="1,180"
             rightDataSpan="85%"
-            boardStyle="w-[30%]"
+            boardStyle="lg:w-[30%] w-full lg:my-0 my-5"
           />
 
           <BoardOderData />
         </section>
 
-        <section className="mt-5 w-full h-[70vh] flex justify-between">
-          <div className="w-[63%] h-full flex flex-col gap-5">
-            <div className="h-1/2 flex gap-8">
-              <div className="w-1/2 h-full bg-mainWhite p-5 rounded-xl">
+        <section className="mt-5 w-full h-[70vh] lg:flex justify-between section2">
+          <div className="lg:w-[63%] w-full h-full flex flex-col gap-5">
+            <div className="h-1/2 lg:flex gap-8">
+              <div className="lg:w-1/2 w-full h-full bg-mainWhite p-5 rounded-xl">
                 <div className="flex items-center justify-between h-[10%]">
                   <p>Marketing</p>
 
@@ -118,7 +116,7 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              <div className="w-1/2 h-full flex flex-col items-center justify-between gap-5">
+              <div className="lg:w-1/2 w-ful h-full lg:mt-0 mt-5 flex flex-col items-center justify-between gap-5">
                 <BoardData
                   iconBg="bg-[#ffffff29]"
                   icon={folder2}
@@ -143,7 +141,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="h-1/2 bg-mainWhite p-5 rounded-xl">
+            <div className="lg:h-1/2 bg-mainWhite p-5 rounded-xl lg:mt-0 mt-[21rem]">
               <div className="flex items-center justify-between h-[10%]">
                 <div className="flex items-center">
                   <p>Summary</p>
@@ -173,7 +171,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-mainWhite w-[35%] h-full px-5 pb-2 rounded-2xl">
+          <div className="bg-mainWhite lg:w-[35%] w-full h-full px-5 pb-2 rounded-2xl lg:mt-0 mt-[18rem]">
             <div className="py-5">
               <h2>Recent Order</h2>
             </div>
