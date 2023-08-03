@@ -22,11 +22,15 @@ const Sidebar = () => {
     <div className="bg-[#F4F5FA] flex w-full h-screen">
       <div
         className={`sidebar flex flex-col ${
-          !open ? "w-[8%]" : "w-[20%]"
-        } w-[20%] bg-[#ffffff] h-screen py-5 shadow-xl relative`}
+          open ? "lg:w-[20%] w-[75%]" : "lg:w-[8%] w-[5%]"
+        } w-[20%] bg-mainWhite h-screen py-5 shadow-xl relative`}
       >
-        <div className="pb-5 pr-5 pl-10">
-          <div className="brand flex items-center">
+        <div className="lg:pb-5 pr-5 pl-10">
+          <div
+            className={`brand flex items-center ${
+              !open ? "lg:block hidden" : "block"
+            } `}
+          >
             <img src={metrixLogo} className="logo" alt="React logo" />
             <h2
               className={`ml-5 text-3xl font-bold text-mainBlack ${
@@ -36,6 +40,7 @@ const Sidebar = () => {
               Metrix
             </h2>
           </div>
+
           <div
             className={`toogle h-[30px] w-[30px] border-actionBlue border-[1px] flex items-center rounded-lg absolute top-12 -right-2 ${
               !open && "rotate-180"
@@ -49,34 +54,87 @@ const Sidebar = () => {
         <div
           className={`sidebar-menu ${
             open ? "px-10" : "px-5"
-          }  mt-10 flex flex-col gap-2`}
+          }  lg:mt-10 mt-5 flex flex-col lg:gap-2`}
         >
           <MenuLink
             avata={dashboard}
             title={!open ? "" : "Dashboard"}
-            style={location.pathname === "/" ? "active" : ""}
+            style={
+              location.pathname === "/"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : ""
+            }
             to="/"
           />
-          <MenuLink avata={orders} title={!open ? "" : "Orders"} />
-          <MenuLink avata={userIcon} title={!open ? "" : "Customer"} />
-          <MenuLink avata={folderIcon} title={!open ? "" : "Inventry"} />
+
+          <MenuLink
+            avata={orders}
+            title={!open ? "" : "Orders"}
+            style={
+              location.pathname === "/orders"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : ""
+            }
+          />
+
+          <MenuLink
+            avata={userIcon}
+            title={!open ? "" : "Customer"}
+            style={
+              location.pathname === "/customer"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : ""
+            }
+          />
+
+          <MenuLink
+            avata={folderIcon}
+            title={!open ? "" : "Inventry"}
+            style={
+              location.pathname === "/inventry"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : ""
+            }
+          />
+
           <MenuLink
             avata={chatIcon}
             title={!open ? "" : "Conversations"}
-            style={location.pathname === "/conversations" ? "active" : ""}
+            style={
+              location.pathname === "/conversations"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : ""
+            }
             to="/conversations"
           />
-          <MenuLink avata={settingsIcon} title={!open ? "" : "Settings"} />
+
+          <MenuLink
+            avata={settingsIcon}
+            title={!open ? "" : "Settings"}
+            style={
+              location.pathname === "/settings"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : ""
+            }
+          />
         </div>
 
-        <div className="sidebar-footer mt-auto px-10">
+        <div className={`sidebar-footer mt-auto ${open ? "px-10" : "px-5"}`}>
           <MenuLink
             avata={headphoneIcon}
             title={!open ? "" : "Contact Support"}
-            style="sidebar-footer-support"
+            style={
+              location.pathname === "/support"
+                ? `active ${!open ? "lg:block hidden" : "block"}`
+                : "sidebar-footer-support"
+            }
           />
 
-          <div className="bg-secondary mt-5 rounded-lg">
+          <div
+            className={`bg-secondary lg:mt-5 rounded-lg ${
+              !open ? "lg:block hidden" : "block"
+            }`}
+          >
             <MenuLink
               avata={giftIcon}
               title={!open ? "" : "Free Gift Awaits You!"}
@@ -85,7 +143,9 @@ const Sidebar = () => {
 
             <a href="#">
               <div
-                className={`flex items-center px-5 pb-5 ${!open && "hidden"}`}
+                className={`flex items-center px-5 lg:pb-5 ${
+                  !open && "hidden"
+                }`}
               >
                 <p className="text-xs font-light">Upgrade your account</p>
                 <img src={rightIcon} alt="chevron-right" className="ml-5" />
@@ -106,7 +166,11 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <main className={`${open ? "w-[80%]" : "w-[90%]"}  h-screen`}>
+      <main
+        className={`${
+          open ? "lg:w-[80%] w-full" : "lg:w-[92%] w-full"
+        }  h-screen`}
+      >
         <Outlet />
       </main>
     </div>
